@@ -1,6 +1,9 @@
 import React from "react";
 import { Router } from "@reach/router";
 
+import "./css/App.css";
+
+import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 
 import Sync from "./pages/Sync";
@@ -9,23 +12,14 @@ import Categories from "./pages/Categories";
 
 const App = () => {
   return (
-    <div>
+    <div className="App">
+      <Header />
       <Navbar />
-      <div className="ui container">
+      <div>
         <Router>
           <Sync path="/" />
           <Products path="/products" />
           <Categories path="/categories" />
-          <Quiz
-            path="/quiz"
-            userAnswers={userAnswers}
-            setAnswers={setAnswers}
-          />
-          <Result
-            path="/result"
-            userAnswers={userAnswers}
-            resetAnswers={resetAnswers}
-          />
         </Router>
       </div>
     </div>
