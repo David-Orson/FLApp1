@@ -15,43 +15,15 @@ body {
   margin: 0 auto;
 }
 
-/* Header Section */
-
-.header {
+.main-container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #1c2260;
-
-  padding: 12px 16px 12px 16px;
 }
 
-.logo {
-  color: #b1c1e2;
-  font-size: 24px;
-  font-weight: 400;
+.navbar-container {
+  width: 15%;
+  border-right: 1px #e1e2e4 solid;
 }
 
-.user-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.user {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #996ee2;
-  color: #f1d5fe;
-  height: 30px;
-  width: 30px;
-  margin: 0px 10px 0px 0px;
-  border-radius: 50%;
-  font-size: 15px;
-  font-weight: 400;
-}
-
-.username {
-  color: #f4fcff;
+.content-container {
+  width: 85%;
 }

@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1c2260;
+
+  padding: 13px 16px 13px 16px;
+}
+
+.logo {
+  color: #bbbfd8;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.user-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #996ee2;
+  color: #f1d5fe;
+  height: 30px;
+  width: 30px;
+  margin: 0px 10px 0px 0px;
+  border-radius: 50%;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.username {
+  color: #f4fcff;
+  font-size: 14px;
+}

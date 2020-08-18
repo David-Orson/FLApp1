@@ -1,0 +1,57 @@
+.navbar {
+  padding: 16px 10px 16px 10px;
+  height: 90vh;
+}
+
+.nav-title {
+  font-weight: 400;
+  font-size: 18px;
+  padding: 4px;
+}
+
+.major-link {
+  display: inline-block;
+  padding: 8px 4px 6px 6px;
+  background: #e3e7f0;
+  color: #5972d3;
+  border-radius: 4px;
+  width: 91%;
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.minor-container {
+  padding: 0px 10px 10px 22px;
+}
+
+.minor-link {
+  display: inline-block;
+  padding: 8px 4px 6px 6px;
+  margin: 6px 2px;
+
+  color: #010000;
+  border-radius: 4px;
+  width: 94%;
+  text-decoration: none;
+
+  font-weight: 400;
+}
+
+.sub-container {
+  padding: 0px 0px 0px 26px;
+}
+
+.sub-link {
+  display: inline-block;
+  padding: 8px 4px 6px 6px;
+  margin: 6px 2px;
+
+  color: #010000;
+  border-radius: 4px;
+  width: 94%;
+  text-decoration: none;
+
+  font-weight: 400;
+}

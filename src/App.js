@@ -14,13 +14,18 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-      <Navbar />
-      <div>
-        <Router>
-          <Sync path="/" />
-          <Products path="/products" />
-          <Categories path="/categories" />
-        </Router>
+      <div className="main-container">
+        <div className="navbar-container">
+          <Navbar />
+        </div>
+
+        <div className="content-container">
+          <Router>
+            <Sync path="/" />
+            <Products path="/products" />
+            <Categories path="/categories" />
+          </Router>
+        </div>
       </div>
     </div>
   );
