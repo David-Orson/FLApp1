@@ -1,31 +1,10 @@
-import React, { useEffect } from "react";
-import { useLocation } from "@reach/router";
-import queryString from "query-string";
-import axios from "axios";
+import React from "react";
 
 import "../css/Sync.css";
 
 import ContentTopline from "../components/ContentTopline";
 
 const Sync = () => {
-  const location = useLocation();
-
-  let url = location.search;
-  let params = queryString.parse(url);
-
-  useEffect(() => {
-    axios.post(
-      "http://54.219.211.245:8080/omnigateway/auth",
-      {},
-      {
-        headers: {
-          mid: params.mid,
-          code: params.code,
-        },
-      }
-    );
-  }, []);
-
   return (
     <div>
       <ContentTopline title="Clover to Shopify Product Sync" />

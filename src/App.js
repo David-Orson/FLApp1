@@ -1,5 +1,7 @@
-import React from "react";
-import { Router } from "@reach/router";
+import React, { useEffect } from "react";
+import { Router, useLocation } from "@reach/router";
+import queryString from "query-string";
+import axios from "axios";
 
 import "./css/App.css";
 
@@ -11,6 +13,51 @@ import Products from "./pages/Products";
 import Categories from "./pages/Categories";
 
 const App = () => {
+  const location = useLocation();
+
+  let url = location.search;
+  let { mid, code } = queryString.parse(url);
+
+  useEffect(async () => {
+    try {
+      const auth = await axios.post(
+        "http://54.219.211.245:8080/omnigateway/auth",
+        {},
+        {
+          headers: {
+            mid: mid,
+            code: code,
+          },
+        }
+      );
+
+      const userData = await axios.get(
+        `http://54.219.211.245:8080/omnigateway/api/${mid}/info`,
+        {
+          headers: {
+            Authorization: `Bearer ${auth.data.token}`,
+          },
+        }
+      );
+
+      console.log(userData);
+    } catch (err) {
+      console.error(err);
+    }
+  }, []);
+
+  const syncCategoriesAction = async (auth) => {
+    const SyncData = await axios.post(
+      `http://54.219.211.245:8080/omnigateway/api/${mid}/sync/clover/categories`,
+      {
+        headers: {
+          Authorization: `Bearer ${auth.data.token}`,
+        },
+      }
+    );
+    console.log(SyncData);
+  };
+
   return (
     <div className="App">
       <Header />
