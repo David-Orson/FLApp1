@@ -17,30 +17,53 @@ const Sync = (props) => {
     categoriesCount,
   } = props.userData;
 
+  const cloverAccountMarkup = clName ? (
+    <div className="account-container">
+      <p>{clName}</p>
+      <p className="caption">MID: {clMid}</p>
+      <p className="authenticated-caption">
+        {clName ? "Authentication Complete" : null}
+      </p>
+    </div>
+  ) : (
+    <div className="account-container">
+      <a className="signin-link">Sign in to Authenticate</a>
+      <p className="create-helper">
+        Don't have a Clover Account?<span> </span>
+        <a className="create-link">Start to create</a>
+      </p>
+    </div>
+  );
+
+  const shopifyAccountMarkup = shName ? (
+    <div className="account-container">
+      <p>{shName}</p>
+      <p className="caption">MID: {shMid}</p>
+      <p className="authenticated-caption">
+        {shName ? "Authentication Complete" : null}
+      </p>
+    </div>
+  ) : (
+    <div className="account-container">
+      <a className="signin-link">Sign in to Authenticate</a>
+      <p className="create-helper">
+        Don't have a Clover Account?<span> </span>
+        <a className="create-link">Start to create</a>
+      </p>
+    </div>
+  );
+
   return (
     <div>
       <ContentTopline title="Clover to Shopify Product Sync" />
       <div className="accounts">
         <div className="clover-account">
           <h2 className="missing-icon">Clvr</h2>
-          <div className="account-container">
-            <p>{clName}</p>
-            <p className="caption">{clMid}</p>
-            <p className="authenticated-caption">
-              {clName ? "Authentication Complete" : null}
-            </p>
-          </div>
+          {cloverAccountMarkup}
         </div>
         <div className="shopify-account">
           <h2 className="missing-icon">Shpfy</h2>
-          <div className="account-container">
-            <a className="signin-link">Sign in to Authenticate</a>
-
-            <p className="create-helper">
-              Don't have a Shopify Account?<span> </span>
-              <a className="create-link">Start to create</a>
-            </p>
-          </div>
+          {shopifyAccountMarkup}
         </div>
       </div>
       <div className="data-container">
