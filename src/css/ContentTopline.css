@@ -1,0 +1,11 @@
+.shop-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #495f6d;
+  color: white;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  margin-bottom: 5px;
+}

@@ -20,11 +20,13 @@ const App = () => {
         </div>
 
         <div className="content-container">
-          <Router>
-            <Sync path="/" />
-            <Products path="/products" />
-            <Categories path="/categories" />
-          </Router>
+          <div className="content">
+            <Router>
+              <Sync path="/" />
+              <Products path="/products" />
+              <Categories path="/categories" />
+            </Router>
+          </div>
         </div>
       </div>
     </div>
