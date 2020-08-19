@@ -1,10 +1,31 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation } from "@reach/router";
+import queryString from "query-string";
+import axios from "axios";
 
 import "../css/Sync.css";
 
 import ContentTopline from "../components/ContentTopline";
 
 const Sync = () => {
+  const location = useLocation();
+
+  let url = location.search;
+  let params = queryString.parse(url);
+
+  useEffect(() => {
+    axios.post(
+      "http://54.219.211.245:8080/omnigateway/auth",
+      {},
+      {
+        headers: {
+          mid: params.mid,
+          code: params.code,
+        },
+      }
+    );
+  }, []);
+
   return (
     <div>
       <ContentTopline title="Clover to Shopify Product Sync" />
@@ -23,7 +44,7 @@ const Sync = () => {
             <a className="signin-link">Sign in to Authenticate</a>
 
             <p className="create-helper">
-              Don't have a Shopify Account?{" "}
+              Don't have a Shopify Account?<span> </span>
               <a className="create-link">Start to create</a>
             </p>
           </div>
@@ -41,11 +62,9 @@ const Sync = () => {
             <td className="td--sync">Items/Products</td>
             <td className="td--sync">15,000 Records</td>
             <td className="td--sync">
-              [Fields Mapped by Default]{" "}
-              <a className="signin-link">
-                <br />
-                View Mapping
-              </a>
+              [Fields Mapped by Default]
+              <br />
+              <a className="signin-link">View Mapping</a>
             </td>
             <td className="td--sync sync-text">Live Sync</td>
           </tr>
@@ -53,7 +72,8 @@ const Sync = () => {
             <td className="td--sync">Categories</td>
             <td className="td--sync">7 Categories</td>
             <td className="td--sync">
-              [Categories Mapped by Default]{" "}
+              [Categories Mapped by Default]
+              <br />
               <a className="signin-link">View Mapping</a>
             </td>
             <td className="td--sync sync-text">Batch Sync</td>
@@ -62,7 +82,8 @@ const Sync = () => {
             <td className="td--sync">Modifiers</td>
             <td className="td--sync"></td>
             <td className="td--sync">
-              [Modifiers Mapped by Default]{" "}
+              [Modifiers Mapped by Default]
+              <br />
               <a className="signin-link">View Mapping</a>
             </td>
             <td className="td--sync sync-text">Soon</td>
@@ -71,7 +92,8 @@ const Sync = () => {
             <td className="td--sync">Labels</td>
             <td className="td--sync">29 Labels Assigned to Items</td>
             <td className="td--sync">
-              [Labels Mapped by Default]{" "}
+              [Labels Mapped by Default]
+              <br />
               <a className="signin-link">View Mapping</a>
             </td>
             <td className="td--sync sync-text">Soon</td>
@@ -80,7 +102,8 @@ const Sync = () => {
             <td className="td--sync">Taxes</td>
             <td className="td--sync">10 Tax rates</td>
             <td className="td--sync">
-              [Labels Mapped by Default]{" "}
+              [Labels Mapped by Default]
+              <br />
               <a className="signin-link">View Mapping</a>
             </td>
             <td className="td--sync sync-text">Soon</td>
