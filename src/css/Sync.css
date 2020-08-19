@@ -1,0 +1,91 @@
+/* Accounts Sections */
+
+.accounts {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.clover-account {
+  display: flex;
+  justify-content: left;
+  width: 50%;
+}
+
+.shopify-account {
+  display: flex;
+  justify-content: left;
+  width: 50%;
+}
+
+.missing-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85px;
+  width: 85px;
+  background: #42b029;
+  color: white;
+}
+
+.account-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  margin-left: 10px;
+}
+
+.authenticated-caption {
+  color: #40a8d8;
+  font-size: 14px;
+}
+
+.signin-link {
+  color: #40a8d8;
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+.create-helper {
+  padding-left: 110px;
+}
+
+.create-link {
+  color: #40a8d8;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+/* Data Section */
+
+.data-container {
+  background: white;
+  margin-top: 20px;
+  height: 420px;
+  border-radius: 4px;
+  box-shadow: 0px 1px 2px 1px #c0c0c0;
+  padding: 16px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.th--sync,
+.td--sync {
+  padding: 20px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  width: 23%;
+}
+
+.td--sync {
+  padding: 16px 20px 10px 30px;
+}
+
+.sync-text {
+  color: #42b029;
+  font-weight: 600;
+}

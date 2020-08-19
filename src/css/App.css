@@ -1,3 +1,5 @@
+/* Resets and globals */
+
 * {
   margin: 0;
   padding: 0;
@@ -15,6 +17,13 @@ body {
   margin: 0 auto;
 }
 
+.caption {
+  font-weight: 300;
+  font-size: 14px;
+}
+
+/* App Styles */
+
 .main-container {
   display: flex;
 }
@@ -31,8 +40,8 @@ body {
 }
 
 .content {
-  margin: 90px;
+  margin: 85px;
   padding: 10px 20px 30px 20px;
-  background: #fcfcfc;
-  height: 600px;
+  background: #fafafa;
+  height: 650px;
 }
