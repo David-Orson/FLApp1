@@ -68,7 +68,7 @@
   padding: 16px;
 }
 
-table {
+.table--sync {
   border-collapse: collapse;
   width: 100%;
 }

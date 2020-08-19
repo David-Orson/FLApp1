@@ -30,7 +30,7 @@ const Sync = () => {
         </div>
       </div>
       <div className="data-container">
-        <table>
+        <table className="table--sync">
           <tr>
             <th className="th--sync">Data to Sync</th>
             <th className="th--sync">Object Details</th>
