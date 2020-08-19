@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Router, useLocation } from "@reach/router";
 import queryString from "query-string";
 import axios from "axios";
@@ -13,6 +13,29 @@ import Products from "./pages/Products";
 import Categories from "./pages/Categories";
 
 const App = () => {
+  const [state, setState] = useState({
+    userData: {
+      mid: null,
+      clMid: null,
+      clName: null,
+      shMid: null,
+      shName: null,
+      itemsCount: null,
+      categoriesCount: null,
+    },
+  });
+  const dummyData = {
+    userData: {
+      mid: 691,
+      clMid: "NQWCTQAWCFC24",
+      clName: "Test Store7771495",
+      shMid: 43007443093,
+      shName: "Test Store7771495",
+      itemsCount: 1066,
+      categoriesCount: 9,
+    },
+  };
+
   const location = useLocation();
 
   let url = location.search;
@@ -20,7 +43,7 @@ const App = () => {
 
   useEffect(async () => {
     try {
-      const auth = await axios.post(
+      /* const auth = await axios.post(
         "http://54.219.211.245:8080/omnigateway/auth",
         {},
         {
@@ -38,9 +61,13 @@ const App = () => {
             Authorization: `Bearer ${auth.data.token}`,
           },
         }
-      );
+      ); */
 
-      console.log(userData);
+      setTimeout(() => {
+        setState({ ...dummyData });
+      }, 5000);
+
+      /*  console.log(userData); */
     } catch (err) {
       console.error(err);
     }
@@ -69,7 +96,7 @@ const App = () => {
         <div className="content-container">
           <div className="content">
             <Router>
-              <Sync path="/" />
+              <Sync userData={state.userData} path="/" />
               <Products path="/products" />
               <Categories path="/categories" />
             </Router>
