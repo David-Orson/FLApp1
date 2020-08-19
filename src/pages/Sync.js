@@ -47,7 +47,7 @@ const Sync = (props) => {
     <div className="account-container">
       <a className="signin-link">Sign in to Authenticate</a>
       <p className="create-helper">
-        Don't have a Clover Account?<span> </span>
+        Don't have a Shopify Account?<span> </span>
         <a className="create-link">Start to create</a>
       </p>
     </div>
@@ -76,21 +76,33 @@ const Sync = (props) => {
           </tr>
           <tr>
             <td className="td--sync">Items/Products</td>
-            <td className="td--sync">{itemsCount} Records</td>
             <td className="td--sync">
-              [Fields Mapped by Default]
-              <br />
-              <a className="signin-link">View Mapping</a>
+              {itemsCount ? `${itemsCount} Records` : null}
+            </td>
+            <td className="td--sync">
+              {itemsCount ? (
+                <div>
+                  [Fields Mapped by Default]
+                  <br />
+                  <a className="signin-link">View Mapping</a>
+                </div>
+              ) : null}
             </td>
             <td className="td--sync sync-text">Live Sync</td>
           </tr>
           <tr>
             <td className="td--sync">Categories</td>
-            <td className="td--sync">{categoriesCount} Categories</td>
             <td className="td--sync">
-              [Categories Mapped by Default]
-              <br />
-              <a className="signin-link">View Mapping</a>
+              {categoriesCount ? `${categoriesCount} Records` : null}
+            </td>
+            <td className="td--sync">
+              {categoriesCount ? (
+                <div>
+                  [Categories Mapped by Default]
+                  <br />
+                  <a className="signin-link">View Mapping</a>
+                </div>
+              ) : null}
             </td>
             <td className="td--sync sync-text">Batch Sync</td>
           </tr>
