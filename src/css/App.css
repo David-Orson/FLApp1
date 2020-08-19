@@ -22,6 +22,11 @@ body {
   font-size: 14px;
 }
 
+a:focus {
+  color: blue;
+  outline: none;
+}
+
 /* App Styles */
 
 .main-container {

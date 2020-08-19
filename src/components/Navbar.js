@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Link } from "@reach/router";
+import NavLink from "./NavLink";
 
 import "../css/Navbar.css";
 
@@ -9,19 +9,19 @@ const Navbar = () => {
     <div className="navbar">
       <h2 className="nav-title">APPS</h2>
 
-      <Link to="/" className="major-link">
+      <NavLink to="/" className="major-link">
         Clover to Shopify Product Sync
-      </Link>
+      </NavLink>
 
       <div className="minor-container">
         <p className="minor-link">Mapping Rules</p>
         <div className="sub-container">
-          <Link to="/" className="sub-link">
+          <NavLink to="/products" className="sub-link">
             For Items/Products
-          </Link>
-          <Link to="/" className="sub-link">
+          </NavLink>
+          <NavLink to="/categories" className="sub-link">
             For Categories
-          </Link>
+          </NavLink>
         </div>
         <a href="https://www.google.com" className="minor-link">
           Back to Clover
