@@ -100,7 +100,11 @@ const App = () => {
         <div className="content-container">
           <div className="content">
             <Router>
-              <Sync userData={state.userData} path="/" />
+              <Sync
+                path="/"
+                userData={state.userData}
+                syncAction={syncCategoriesAction}
+              />
               <Products path="/products" />
               <Categories path="/categories" />
             </Router>

@@ -136,7 +136,11 @@ const Sync = (props) => {
                   </div>
                 ) : null}
               </td>
-              <td className="td--sync sync-text">Batch Sync</td>
+              <td className="td--sync sync-text">
+                <button onClick={props.syncAction} className="button">
+                  Batch Sync
+                </button>
+              </td>
             </tr>
             <tr className="row--sync">
               <td className="td--sync">Modifiers</td>
