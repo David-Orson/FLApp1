@@ -95,71 +95,75 @@ const Sync = (props) => {
       </div>
       <div className="data-container">
         <table className="table--sync">
-          <tr className="row--sync">
-            <th className="th--sync">Data to Sync</th>
-            <th className="th--sync">Object Details</th>
-            <th className="th--sync"></th>
-            <th className="th--sync"></th>
-          </tr>
-          <tr className="row--sync">
-            <td className="td--sync">Items/Products</td>
-            <td className="td--sync">
-              {itemsCount ? `${itemsCount} Records` : null}
-            </td>
-            <td className="td--sync">
-              {itemsCount ? (
-                <div>
-                  [Fields Mapped by Default]
-                  <br />
-                  <a className="signin-link">View Mapping</a>
-                </div>
-              ) : null}
-            </td>
-            <td className="td--sync sync-text">Live Sync</td>
-          </tr>
-          <tr className="row--sync">
-            <td className="td--sync">Categories</td>
-            <td className="td--sync">
-              {categoriesCount ? `${categoriesCount} Records` : null}
-            </td>
-            <td className="td--sync">
-              {categoriesCount ? (
-                <div>
-                  [Categories Mapped by Default]
-                  <br />
-                  <a className="signin-link">View Mapping</a>
-                </div>
-              ) : null}
-            </td>
-            <td className="td--sync sync-text">Batch Sync</td>
-          </tr>
-          <tr className="row--sync">
-            <td className="td--sync">Modifiers</td>
-            <td className="td--sync"></td>
-            <td className="td--sync">
-              <br />
-              <a className="signin-link"></a>
-            </td>
-            <td className="td--sync sync-text">Soon</td>
-          </tr>
-          <tr className="row--sync">
-            <td className="td--sync">Labels</td>
-            <td className="td--sync"></td>
-            <td className="td--sync">
-              <br />
-              <a className="signin-link"></a>
-            </td>
-            <td className="td--sync sync-text">Soon</td>
-          </tr>
-          <tr className="row--sync">
-            <td className="td--sync">Taxes</td>
-            <td className="td--sync"></td>
-            <td className="td--sync">
-              <br />
-              <a className="signin-link"></a>
-            </td>
-            <td className="td--sync sync-text">Soon</td>
-          </tr>
+          <thead>
+            <tr className="row--sync">
+              <th className="th--sync">Data to Sync</th>
+              <th className="th--sync">Object Details</th>
+              <th className="th--sync"></th>
+              <th className="th--sync"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="row--sync">
+              <td className="td--sync">Items/Products</td>
+              <td className="td--sync">
+                {itemsCount ? `${itemsCount} Records` : null}
+              </td>
+              <td className="td--sync">
+                {itemsCount ? (
+                  <div>
+                    [Fields Mapped by Default]
+                    <br />
+                    <a className="signin-link">View Mapping</a>
+                  </div>
+                ) : null}
+              </td>
+              <td className="td--sync sync-text">Live Sync</td>
+            </tr>
+            <tr className="row--sync">
+              <td className="td--sync">Categories</td>
+              <td className="td--sync">
+                {categoriesCount ? `${categoriesCount} Records` : null}
+              </td>
+              <td className="td--sync">
+                {categoriesCount ? (
+                  <div>
+                    [Categories Mapped by Default]
+                    <br />
+                    <a className="signin-link">View Mapping</a>
+                  </div>
+                ) : null}
+              </td>
+              <td className="td--sync sync-text">Batch Sync</td>
+            </tr>
+            <tr className="row--sync">
+              <td className="td--sync">Modifiers</td>
+              <td className="td--sync"></td>
+              <td className="td--sync">
+                <br />
+                <a className="signin-link"></a>
+              </td>
+              <td className="td--sync sync-text">Soon</td>
+            </tr>
+            <tr className="row--sync">
+              <td className="td--sync">Labels</td>
+              <td className="td--sync"></td>
+              <td className="td--sync">
+                <br />
+                <a className="signin-link"></a>
+              </td>
+              <td className="td--sync sync-text">Soon</td>
+            </tr>
+            <tr className="row--sync">
+              <td className="td--sync">Taxes</td>
+              <td className="td--sync"></td>
+              <td className="td--sync">
+                <br />
+                <a className="signin-link"></a>
+              </td>
+              <td className="td--sync sync-text">Soon</td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>
