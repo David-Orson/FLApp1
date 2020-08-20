@@ -30,12 +30,12 @@ const App = () => {
   const location = useLocation();
 
   let url = location.search;
-  let { mid /*, code */ } = queryString.parse(url);
+  let { mid, code } = queryString.parse(url);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const dummyData = {
+        /* const dummyData = {
           userData: {
             mid: 691,
             clMid: "NQWCTQAWCFC24",
@@ -47,12 +47,12 @@ const App = () => {
             itemsCount: 1066,
             categoriesCount: 9,
           },
-        };
+        }; */
 
-        /* mid commented out in Sync.js, required for functionality, uncomment when needed */
+        /* mid commented out in Sync.js, may be required for future functionality, uncomment when needed */
 
-        /* const auth = await axios.post(
-          "http://54.219.211.245:8080/omnigateway/auth",
+        const auth = await axios.post(
+          "https://omnigateway.net/auth",
           {},
           {
             headers: {
@@ -61,19 +61,21 @@ const App = () => {
             },
           }
         );
-  
-        const userData = await axios.get(
-          `http://54.219.211.245:8080/omnigateway/api/${mid}/info`,
-          {
-            headers: {
-              Authorization: `Bearer ${auth.data.token}`,
-            },
-          }
-        ); */
-        setTimeout(() => {
+
+        const res = await axios.get(`https://omnigateway.net/api/${mid}/info`, {
+          headers: {
+            Authorization: `Bearer ${auth.data.token}`,
+          },
+        });
+
+        const resData = { userData: { ...res.data } };
+        setState({ ...resData });
+        console.log(resData);
+        console.log(state);
+
+        /* setTimeout(() => {
           setState({ ...dummyData });
-        }, 5000);
-        /*  console.log(userData); */
+        }, 5000); */
       } catch (err) {
         console.error(err);
       }
@@ -83,7 +85,7 @@ const App = () => {
 
   const syncCategoriesAction = async (auth) => {
     const SyncData = await axios.post(
-      `http://54.219.211.245:8080/omnigateway/api/${mid}/sync/clover/categories`,
+      `https://omnigateway.net/api/${mid}/sync/clover/categories`,
       {
         headers: {
           Authorization: `Bearer ${auth.data.token}`,
