@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Link } from "@reach/router";
+
 import "../css/Sync.css";
 
 import cloverLogo from "../Assets/clover.png";
@@ -116,7 +118,9 @@ const Sync = (props) => {
                   <div>
                     [Fields Mapped by Default]
                     <br />
-                    <p className="signin-link">View Mapping</p>
+                    <Link className="signin-link" to="/products">
+                      View Mapping
+                    </Link>
                   </div>
                 ) : null}
               </td>
@@ -132,7 +136,9 @@ const Sync = (props) => {
                   <div>
                     [Categories Mapped by Default]
                     <br />
-                    <p className="signin-link">View Mapping</p>
+                    <Link className="signin-link" to="/categories">
+                      View Mapping
+                    </Link>
                   </div>
                 ) : null}
               </td>
