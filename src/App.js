@@ -28,6 +28,7 @@ const App = () => {
   });
   const [mid, setMid] = useState(null);
   const [code, setCode] = useState(null);
+  const [buttonLoading, setButtonLoading] = useState(false);
 
   const location = useLocation();
 
@@ -99,6 +100,7 @@ const App = () => {
   }, []);
 
   const syncCategoriesAction = async () => {
+    setButtonLoading(true);
     const auth = await axios.post(
       "https://omnigateway.net/auth",
       {},
@@ -120,6 +122,7 @@ const App = () => {
       }
     );
     console.log(SyncData);
+    setButtonLoading(false);
   };
 
   return (
@@ -137,6 +140,7 @@ const App = () => {
                 path="/"
                 userData={state.userData}
                 syncAction={syncCategoriesAction}
+                buttonLoading={buttonLoading}
               />
               <Products path="/products" />
               <Categories path="/categories" />

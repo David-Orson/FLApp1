@@ -20,6 +20,8 @@ const Sync = (props) => {
     categoriesCount,
   } = props.userData;
 
+  console.log(props.buttonLoading);
+
   const cloverAccountMarkup = clName ? (
     <div className="account-container">
       <p>{clName}</p>
@@ -143,9 +145,13 @@ const Sync = (props) => {
                 ) : null}
               </td>
               <td className="td--sync sync-text">
-                <button onClick={() => props.syncAction()} className="button">
-                  Batch Sync
-                </button>
+                {props.buttonLoading ? (
+                  <p>Loading...</p>
+                ) : (
+                  <button onClick={() => props.syncAction()} className="button">
+                    Batch Sync
+                  </button>
+                )}
               </td>
             </tr>
             <tr className="row--sync">
