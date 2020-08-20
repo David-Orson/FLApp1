@@ -24,17 +24,6 @@ const App = () => {
       categoriesCount: null,
     },
   });
-  const dummyData = {
-    userData: {
-      mid: 691,
-      clMid: "NQWCTQAWCFC24",
-      clName: "Test Store7771495",
-      shMid: 43007443093,
-      shName: "Test Store7771495",
-      itemsCount: 1066,
-      categoriesCount: 9,
-    },
-  };
 
   const location = useLocation();
 
@@ -44,6 +33,18 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        const dummyData = {
+          userData: {
+            mid: 691,
+            clMid: "NQWCTQAWCFC24",
+            clName: "Test Store7771495",
+            shMid: 43007443093,
+            shName: "Test Store7771495",
+            itemsCount: 1066,
+            categoriesCount: 9,
+          },
+        };
+
         /* mid commented out in Sync.js, required for functionality, uncomment when needed */
 
         /* const auth = await axios.post(
@@ -74,7 +75,7 @@ const App = () => {
       }
     };
     fetchData();
-  }, [dummyData]);
+  }, []);
 
   const syncCategoriesAction = async (auth) => {
     const SyncData = await axios.post(

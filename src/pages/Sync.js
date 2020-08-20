@@ -8,8 +8,6 @@ import shopifyLogo from "../Assets/shopify.png";
 import ContentTopline from "../components/ContentTopline";
 
 const Sync = (props) => {
-  console.log(props);
-
   const {
     /* mid, */
     clMid,
