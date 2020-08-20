@@ -7,7 +7,7 @@ import omniIcon from "../Assets/omnigateway_icon.png";
 const ContentTopline = (props) => {
   return (
     <div className="title-topline">
-      <img className="logo--omni" src={omniIcon} />
+      <img className="logo--omni" src={omniIcon} alt="OMNIGATEWAY.NET" />
       <h4>{props.title}</h4>
     </div>
   );

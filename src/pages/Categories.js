@@ -18,13 +18,17 @@ const Categories = () => {
               <th className="th--products"></th>
               <th className="th--products">
                 <div className="th--products--flexer">
-                  <img className="logo--small" src={cloverLogo} />
+                  <img className="logo--small" src={cloverLogo} alt="Clover" />
                   <p>From Clover Items</p>
                 </div>
               </th>
               <th className="th--products">
                 <div className="th--products--flexer">
-                  <img className="logo--small" src={shopifyLogo} />
+                  <img
+                    className="logo--small"
+                    src={shopifyLogo}
+                    alt="Shopify"
+                  />
                   <p>Into Shopify products</p>
                 </div>
               </th>

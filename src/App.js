@@ -39,37 +39,42 @@ const App = () => {
   const location = useLocation();
 
   let url = location.search;
-  let { mid, code } = queryString.parse(url);
+  let { mid /*, code */ } = queryString.parse(url);
 
-  useEffect(async () => {
-    try {
-      /* const auth = await axios.post(
-        "http://54.219.211.245:8080/omnigateway/auth",
-        {},
-        {
-          headers: {
-            mid: mid,
-            code: code,
-          },
-        }
-      );
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        /* mid commented out in Sync.js, required for functionality, uncomment when needed */
 
-      const userData = await axios.get(
-        `http://54.219.211.245:8080/omnigateway/api/${mid}/info`,
-        {
-          headers: {
-            Authorization: `Bearer ${auth.data.token}`,
-          },
-        }
-      ); */
-      setTimeout(() => {
-        setState({ ...dummyData });
-      }, 5000);
-      /*  console.log(userData); */
-    } catch (err) {
-      console.error(err);
-    }
-  }, []);
+        /* const auth = await axios.post(
+          "http://54.219.211.245:8080/omnigateway/auth",
+          {},
+          {
+            headers: {
+              mid: mid,
+              code: code,
+            },
+          }
+        );
+  
+        const userData = await axios.get(
+          `http://54.219.211.245:8080/omnigateway/api/${mid}/info`,
+          {
+            headers: {
+              Authorization: `Bearer ${auth.data.token}`,
+            },
+          }
+        ); */
+        setTimeout(() => {
+          setState({ ...dummyData });
+        }, 5000);
+        /*  console.log(userData); */
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    fetchData();
+  }, [dummyData]);
 
   const syncCategoriesAction = async (auth) => {
     const SyncData = await axios.post(

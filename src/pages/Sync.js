@@ -11,7 +11,7 @@ const Sync = (props) => {
   console.log(props);
 
   const {
-    mid,
+    /* mid, */
     clMid,
     clName,
     shMid,
@@ -34,6 +34,7 @@ const Sync = (props) => {
         className="signin-link"
         href="https://www.clover.com/appmarket/apps/VGD1C1C0T1D3P"
         target="_blank"
+        rel="noopener noreferrer"
       >
         Sign in to Authenticate
       </a>
@@ -43,6 +44,7 @@ const Sync = (props) => {
           className="create-link"
           href="https://www.clover.com/goapply/"
           target="_blank"
+          rel="noopener noreferrer"
         >
           Start to create
         </a>
@@ -64,6 +66,7 @@ const Sync = (props) => {
         className="signin-link"
         href="https://apps.shopify.com/clover-live-product-sync"
         target="_blank"
+        rel="noopener noreferrer"
       >
         Sign in to Authenticate
       </a>
@@ -73,6 +76,7 @@ const Sync = (props) => {
           className="create-link"
           href="https://www.shopify.com/"
           target="_blank"
+          rel="noopener noreferrer"
         >
           Start to create
         </a>
@@ -85,11 +89,11 @@ const Sync = (props) => {
       <ContentTopline title="Clover to Shopify Product Sync" />
       <div className="accounts">
         <div className="clover-account">
-          <img className="logo" src={cloverLogo} />
+          <img className="logo" src={cloverLogo} alt="Clover" />
           {cloverAccountMarkup}
         </div>
         <div className="shopify-account">
-          <img className="logo" src={shopifyLogo} />
+          <img className="logo" src={shopifyLogo} alt="Shopfiy" />
           {shopifyAccountMarkup}
         </div>
       </div>
@@ -114,7 +118,7 @@ const Sync = (props) => {
                   <div>
                     [Fields Mapped by Default]
                     <br />
-                    <a className="signin-link">View Mapping</a>
+                    <p className="signin-link">View Mapping</p>
                   </div>
                 ) : null}
               </td>
@@ -130,7 +134,7 @@ const Sync = (props) => {
                   <div>
                     [Categories Mapped by Default]
                     <br />
-                    <a className="signin-link">View Mapping</a>
+                    <p className="signin-link">View Mapping</p>
                   </div>
                 ) : null}
               </td>
@@ -141,7 +145,7 @@ const Sync = (props) => {
               <td className="td--sync"></td>
               <td className="td--sync">
                 <br />
-                <a className="signin-link"></a>
+                <p className="signin-link"></p>
               </td>
               <td className="td--sync sync-text">Soon</td>
             </tr>
@@ -150,7 +154,7 @@ const Sync = (props) => {
               <td className="td--sync"></td>
               <td className="td--sync">
                 <br />
-                <a className="signin-link"></a>
+                <p className="signin-link"></p>
               </td>
               <td className="td--sync sync-text">Soon</td>
             </tr>
@@ -159,7 +163,7 @@ const Sync = (props) => {
               <td className="td--sync"></td>
               <td className="td--sync">
                 <br />
-                <a className="signin-link"></a>
+                <p className="signin-link"></p>
               </td>
               <td className="td--sync sync-text">Soon</td>
             </tr>
