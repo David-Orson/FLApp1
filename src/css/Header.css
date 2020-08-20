@@ -7,6 +7,10 @@
   padding: 13px 16px 13px 16px;
 }
 
+.header-link {
+  text-decoration: none;
+}
+
 .logo--header {
   color: #bbbfd8;
   font-size: 24px;

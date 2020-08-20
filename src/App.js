@@ -62,9 +62,9 @@ const App = () => {
           },
         }
       ); */
-      /* setTimeout(() => {
+      setTimeout(() => {
         setState({ ...dummyData });
-      }, 5000); */
+      }, 5000);
       /*  console.log(userData); */
     } catch (err) {
       console.error(err);

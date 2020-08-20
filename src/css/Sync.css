@@ -33,12 +33,12 @@
 }
 
 .authenticated-caption {
-  color: #40a8d8;
+  color: #5972d3;
   font-size: 14px;
 }
 
 .signin-link {
-  color: #40a8d8;
+  color: #5972d3;
   font-size: 14px;
   text-decoration: underline;
 }
@@ -48,7 +48,7 @@
 }
 
 .create-link {
-  color: #40a8d8;
+  color: #5972d3;
   text-decoration: underline;
   font-weight: 600;
 }
