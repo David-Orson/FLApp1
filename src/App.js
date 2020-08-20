@@ -26,11 +26,25 @@ const App = () => {
       categoriesCount: null,
     },
   });
+  const [mid, setMid] = useState(null);
+  const [code, setCode] = useState(null);
 
   const location = useLocation();
 
   let url = location.search;
-  let { mid, code } = queryString.parse(url);
+
+  let midCode = queryString.parse(url);
+
+  if (midCode.code && midCode.mid) {
+    if (!mid && !code) {
+      console.log("y");
+
+      setMid(midCode.mid);
+      setCode(midCode.code);
+    }
+  }
+
+  /* I found it difficult to implement a solution so that when the user navigates to the HomePage (after the redirect provides the mid and code in url) the url params contain the users mid and code */
 
   useEffect(() => {
     const fetchData = async () => {
@@ -82,7 +96,7 @@ const App = () => {
       }
     };
     fetchData();
-  }, [mid, code]);
+  }, []);
 
   const syncCategoriesAction = async () => {
     const auth = await axios.post(
@@ -110,10 +124,10 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header />
+      <Header mid={mid} code={code} />
       <div className="main-container">
         <div className="navbar-container">
-          <Navbar userData={state.userData} />
+          <Navbar userData={state.userData} mid={mid} code={code} />
         </div>
 
         <div className="content-container">

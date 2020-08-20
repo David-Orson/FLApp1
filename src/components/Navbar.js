@@ -11,7 +11,10 @@ const Navbar = (props) => {
     <div className="navbar">
       <h2 className="nav-title">APPS</h2>
 
-      <NavLink to="/" className="major-link">
+      <NavLink
+        to={`/?mid=${props.mid}&code=${props.code}`}
+        className="major-link"
+      >
         Clover to Shopify Product Sync
       </NavLink>
 

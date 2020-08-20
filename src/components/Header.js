@@ -3,10 +3,13 @@ import { Link } from "@reach/router";
 
 import "../css/Header.css";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <div className="header">
-      <Link className="header-link" to="/">
+      <Link
+        className="header-link"
+        to={`/?mid=${props.mid}&code=${props.code}`}
+      >
         <h1 className="logo--header">OMNIGATEWAY.NET</h1>
       </Link>
 
