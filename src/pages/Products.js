@@ -10,7 +10,7 @@ import ContentTopline from "../components/ContentTopline";
 const Products = () => {
   return (
     <div>
-      <ContentTopline title="Clover to Shopify Mapping Rules For Items/Product Fields" />
+      <ContentTopline title="Clover to Shopify Mapping Rules For Item/Product Fields" />
       <div className="product-container">
         <table className="table--products">
           <tr>

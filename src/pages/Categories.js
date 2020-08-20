@@ -18,7 +18,7 @@ const Categories = () => {
             <th className="th--products">
               <div className="th--products--flexer">
                 <img className="logo--small" src={cloverLogo} />
-                <p>From Clover Item</p>
+                <p>From Clover Items</p>
               </div>
             </th>
             <th className="th--products">

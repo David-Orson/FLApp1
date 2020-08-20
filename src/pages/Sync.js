@@ -95,13 +95,13 @@ const Sync = (props) => {
       </div>
       <div className="data-container">
         <table className="table--sync">
-          <tr>
+          <tr className="row--sync">
             <th className="th--sync">Data to Sync</th>
             <th className="th--sync">Object Details</th>
             <th className="th--sync"></th>
             <th className="th--sync"></th>
           </tr>
-          <tr>
+          <tr className="row--sync">
             <td className="td--sync">Items/Products</td>
             <td className="td--sync">
               {itemsCount ? `${itemsCount} Records` : null}
@@ -117,7 +117,7 @@ const Sync = (props) => {
             </td>
             <td className="td--sync sync-text">Live Sync</td>
           </tr>
-          <tr>
+          <tr className="row--sync">
             <td className="td--sync">Categories</td>
             <td className="td--sync">
               {categoriesCount ? `${categoriesCount} Records` : null}
@@ -133,7 +133,7 @@ const Sync = (props) => {
             </td>
             <td className="td--sync sync-text">Batch Sync</td>
           </tr>
-          <tr>
+          <tr className="row--sync">
             <td className="td--sync">Modifiers</td>
             <td className="td--sync"></td>
             <td className="td--sync">
@@ -142,7 +142,7 @@ const Sync = (props) => {
             </td>
             <td className="td--sync sync-text">Soon</td>
           </tr>
-          <tr>
+          <tr className="row--sync">
             <td className="td--sync">Labels</td>
             <td className="td--sync"></td>
             <td className="td--sync">
@@ -151,7 +151,7 @@ const Sync = (props) => {
             </td>
             <td className="td--sync sync-text">Soon</td>
           </tr>
-          <tr>
+          <tr className="row--sync">
             <td className="td--sync">Taxes</td>
             <td className="td--sync"></td>
             <td className="td--sync">
