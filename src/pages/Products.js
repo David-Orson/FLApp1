@@ -74,7 +74,7 @@ const Products = () => {
             <td className="td--products">Stock Count</td>
           </tr>
           <tr>
-            <td className="td--products--minor">Unit of Measure</td>
+            <td className="td--products--minor">Unit of Measurement</td>
             <td className="td--products--minor">Item Unit</td>
             <td className="td--products--minor"></td>
           </tr>
@@ -90,11 +90,11 @@ const Products = () => {
             - Variable Price Items Not Imported from Clover to Shopify
           </p>
           <p className="caption">
-            - If Variable Price Item is removed from Clover it will be Removed
+            - If Variable Price Item is removed from Clover it will be removed
             from Shopify
           </p>
           <p className="caption">
-            - Changes made to item in Shopify will be overwritten on next sync
+            - Changes made to items in Shopify will be overwritten on next sync
           </p>
         </div>
       </div>
