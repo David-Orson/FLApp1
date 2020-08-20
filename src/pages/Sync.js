@@ -137,7 +137,7 @@ const Sync = (props) => {
                 ) : null}
               </td>
               <td className="td--sync sync-text">
-                <button onClick={props.syncAction} className="button">
+                <button onClick={() => props.syncAction()} className="button">
                   Batch Sync
                 </button>
               </td>

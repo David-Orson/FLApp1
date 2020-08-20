@@ -68,10 +68,11 @@ const App = () => {
           },
         });
 
-        const resData = { userData: { ...res.data } };
-        setState({ ...resData });
-        console.log(resData);
-        console.log(state);
+        const returnData = { userData: { ...res.data }, authenticated: auth };
+        setState({ ...returnData });
+
+        /* console.log(returnData);
+        console.log(state); */
 
         /* setTimeout(() => {
           setState({ ...dummyData });
@@ -81,11 +82,23 @@ const App = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [mid, code]);
 
-  const syncCategoriesAction = async (auth) => {
+  const syncCategoriesAction = async () => {
+    const auth = await axios.post(
+      "https://omnigateway.net/auth",
+      {},
+      {
+        headers: {
+          mid: mid,
+          code: code,
+        },
+      }
+    );
+
     const SyncData = await axios.post(
       `https://omnigateway.net/api/${mid}/sync/clover/categories`,
+      {},
       {
         headers: {
           Authorization: `Bearer ${auth.data.token}`,
