@@ -1,6 +1,9 @@
 /* Much of the styling for categories is currently shared from Products.css */
 
 .categories-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background: white;
   margin-top: 20px;
   min-height: 520px;
@@ -10,5 +13,5 @@
 }
 
 .rules-title--categories {
-  padding: 20px 0px 6px 0px;
+  padding: 0px 0px 6px 0px;
 }

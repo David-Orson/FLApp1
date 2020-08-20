@@ -84,17 +84,19 @@ const Products = () => {
             <td className="td--products">Picture(s)</td>
           </tr>
         </table>
-        <p className="rules-title">Sync Rules</p>
-        <p className="caption">
-          - Variable Price Items Not Imported from Clover to Shopify
-        </p>
-        <p className="caption">
-          - If Variable Price Item is removed from Clover it will be Removed
-          from Shopify
-        </p>
-        <p className="caption">
-          - Changes made to item in Shopify will be overwritten on next sync
-        </p>
+        <div className="rules-container">
+          <p className="rules-title">Sync Rules</p>
+          <p className="caption">
+            - Variable Price Items Not Imported from Clover to Shopify
+          </p>
+          <p className="caption">
+            - If Variable Price Item is removed from Clover it will be Removed
+            from Shopify
+          </p>
+          <p className="caption">
+            - Changes made to item in Shopify will be overwritten on next sync
+          </p>
+        </div>
       </div>
     </div>
   );

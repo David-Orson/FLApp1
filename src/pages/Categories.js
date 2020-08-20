@@ -44,12 +44,14 @@ const Categories = () => {
             <td className="td--products">Tracked</td>
           </tr>
         </table>
-        <p className="rules-title--categories">Sync Rules</p>
-        <p className="caption">- Categories will be synced every 24 hours.</p>
-        <p className="caption">
-          - Changes made to Shopify collections will be overwritten on the next
-          sync based on Categories in Clover.
-        </p>
+        <div className="rules-container">
+          <p className="rules-title--categories">Sync Rules</p>
+          <p className="caption">- Categories will be synced every 24 hours.</p>
+          <p className="caption">
+            - Changes made to Shopify collections will be overwritten on the
+            next sync based on Categories in Clover.
+          </p>
+        </div>
       </div>
     </div>
   );
