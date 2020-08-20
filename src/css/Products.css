@@ -7,14 +7,9 @@
   padding: 16px;
 }
 
-.missing-icon--small {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.logo--small {
   height: 35px;
   width: 35px;
-  background: #42b029;
-  color: white;
   margin-right: 10px;
 }
 

@@ -2,6 +2,9 @@ import React from "react";
 
 import "../css/Sync.css";
 
+import cloverLogo from "../Assets/clover.png";
+import shopifyLogo from "../Assets/shopify.png";
+
 import ContentTopline from "../components/ContentTopline";
 
 const Sync = (props) => {
@@ -27,10 +30,22 @@ const Sync = (props) => {
     </div>
   ) : (
     <div className="account-container">
-      <a className="signin-link">Sign in to Authenticate</a>
+      <a
+        className="signin-link"
+        href="https://www.clover.com/appmarket/apps/VGD1C1C0T1D3P"
+        target="_blank"
+      >
+        Sign in to Authenticate
+      </a>
       <p className="create-helper">
         Don't have a Clover Account?<span> </span>
-        <a className="create-link">Start to create</a>
+        <a
+          className="create-link"
+          href="https://www.clover.com/goapply/"
+          target="_blank"
+        >
+          Start to create
+        </a>
       </p>
     </div>
   );
@@ -45,10 +60,22 @@ const Sync = (props) => {
     </div>
   ) : (
     <div className="account-container">
-      <a className="signin-link">Sign in to Authenticate</a>
+      <a
+        className="signin-link"
+        href="https://apps.shopify.com/clover-live-product-sync"
+        target="_blank"
+      >
+        Sign in to Authenticate
+      </a>
       <p className="create-helper">
         Don't have a Shopify Account?<span> </span>
-        <a className="create-link">Start to create</a>
+        <a
+          className="create-link"
+          href="https://www.shopify.com/"
+          target="_blank"
+        >
+          Start to create
+        </a>
       </p>
     </div>
   );
@@ -58,11 +85,11 @@ const Sync = (props) => {
       <ContentTopline title="Clover to Shopify Product Sync" />
       <div className="accounts">
         <div className="clover-account">
-          <h2 className="missing-icon">Clvr</h2>
+          <img className="logo" src={cloverLogo} />
           {cloverAccountMarkup}
         </div>
         <div className="shopify-account">
-          <h2 className="missing-icon">Shpfy</h2>
+          <img className="logo" src={shopifyLogo} />
           {shopifyAccountMarkup}
         </div>
       </div>

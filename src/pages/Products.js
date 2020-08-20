@@ -2,6 +2,9 @@ import React from "react";
 
 import "../css/Products.css";
 
+import cloverLogo from "../Assets/clover.png";
+import shopifyLogo from "../Assets/shopify.png";
+
 import ContentTopline from "../components/ContentTopline";
 
 const Products = () => {
@@ -14,13 +17,13 @@ const Products = () => {
             <th className="th--products"></th>
             <th className="th--products">
               <div className="th--products--flexer">
-                <h2 className="missing-icon--small">C</h2>
-                <p>From Clover Item</p>
+                <img className="logo--small" src={cloverLogo} />
+                <p>From Clover Items</p>
               </div>
             </th>
             <th className="th--products">
               <div className="th--products--flexer">
-                <h2 className="missing-icon--small">S</h2>
+                <img className="logo--small" src={shopifyLogo} />
                 <p>Into Shopify products</p>
               </div>
             </th>
