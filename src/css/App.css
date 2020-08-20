@@ -35,11 +35,11 @@ a:focus {
 
 .navbar-container {
   width: 15%;
-  border-right: 1px #e1e2e4 solid;
 }
 
 .content-container {
   width: 85%;
+  min-width: 1184px;
   justify-content: center;
   align-items: center;
 }
@@ -49,4 +49,20 @@ a:focus {
   padding: 10px 20px 30px 20px;
   background: #fafafa;
   height: 650px;
+}
+
+@media only screen and (max-width: 1579px) {
+  .content-container {
+    min-width: 1000px;
+  }
+}
+
+@media only screen and (max-width: 1360px) {
+  .App {
+    width: 100%;
+  }
+
+  .content {
+    margin: 45px 85px 85px 85px;
+  }
 }
