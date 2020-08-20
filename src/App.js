@@ -18,8 +18,10 @@ const App = () => {
       mid: null,
       clMid: null,
       clName: null,
+      clDashboardUrl: null,
       shMid: null,
       shName: null,
+      shDashboardUrl: null,
       itemsCount: null,
       categoriesCount: null,
     },
@@ -38,8 +40,10 @@ const App = () => {
             mid: 691,
             clMid: "NQWCTQAWCFC24",
             clName: "Test Store7771495",
+            clDashboardUrl: "https://www.clover.com/dashboard",
             shMid: 43007443093,
             shName: "Test Store7771495",
+            shDashboardUrl: "https://test-store7771495.myshopify.com/admin",
             itemsCount: 1066,
             categoriesCount: 9,
           },
@@ -94,7 +98,7 @@ const App = () => {
       <Header />
       <div className="main-container">
         <div className="navbar-container">
-          <Navbar />
+          <Navbar userData={state.userData} />
         </div>
 
         <div className="content-container">

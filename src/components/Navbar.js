@@ -4,7 +4,9 @@ import NavLink from "./NavLink";
 
 import "../css/Navbar.css";
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const { clDashboardUrl, shDashboardUrl } = props.userData;
+
   return (
     <div className="navbar">
       <h2 className="nav-title">APPS</h2>
@@ -23,12 +25,16 @@ const Navbar = () => {
             For Categories
           </NavLink>
         </div>
-        <a href="https://www.google.com" className="minor-link">
-          Back to Clover
-        </a>
-        <a href="https://www.google.com" className="minor-link">
-          Back to Shopify
-        </a>
+        {clDashboardUrl ? (
+          <a href={clDashboardUrl} className="minor-link">
+            Back to Clover
+          </a>
+        ) : null}
+        {shDashboardUrl ? (
+          <a href={shDashboardUrl} className="minor-link">
+            Back to Shopify
+          </a>
+        ) : null}
       </div>
     </div>
   );
