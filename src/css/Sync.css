@@ -26,9 +26,10 @@
 .account-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: flex-start;
   margin-left: 10px;
+  padding: 10px 0px 20px 0px;
 }
 
 .authenticated-caption {
