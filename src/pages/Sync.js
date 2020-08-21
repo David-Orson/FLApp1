@@ -20,8 +20,6 @@ const Sync = (props) => {
     categoriesCount,
   } = props.userData;
 
-  console.log(props.buttonLoading);
-
   const cloverAccountMarkup = clName ? (
     <div className="account-container">
       <p>{clName}</p>

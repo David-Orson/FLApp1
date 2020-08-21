@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Router, useLocation } from "@reach/router";
+import { Router, useLocation, navigate } from "@reach/router";
 import queryString from "query-string";
 import axios from "axios";
 
@@ -28,28 +28,59 @@ const App = () => {
   });
   const [mid, setMid] = useState(null);
   const [code, setCode] = useState(null);
-  const [authToken, setAuthToken] = useState(null);
+  const [authToken, setAuthToken] = useState();
   const [buttonLoading, setButtonLoading] = useState(false);
 
   const location = useLocation();
 
   let url = location.search;
+  /* console.log(`url`);
+  console.log(location); */
 
   let midCode = queryString.parse(url);
 
   if (midCode.code && midCode.mid) {
     if (!mid && !code) {
-      console.log("y");
-
       setMid(midCode.mid);
       setCode(midCode.code);
+    }
+  }
+
+  const token = localStorage.AuthToken;
+  const midStored = localStorage.mid;
+
+  /* console.log(localStorage.AuthToken);
+  console.log(localStorage.mid);
+  console.log(`token ${authToken}`); */
+
+  if (!authToken) {
+    /* console.log("not auth") */ if (token) {
+      /* console.log(token) */ setAuthToken(token);
+    }
+    if (location.href !== `${location.origin}/`) navigate(location.origin);
+  }
+
+  /* console.log(`here is mid ${mid}`) */ if (!mid) {
+    if (midStored) {
+      setMid(midStored);
     }
   }
 
   /* I found it difficult to implement a solution so that when the user navigates to the HomePage (after the redirect provides the mid and code in url) the url params contain the users mid and code */
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchData = async (token) => {
+      const res = await axios.get(`https://omnigateway.net/api/${mid}/info`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      const returnData = { userData: { ...res.data } };
+      setState({ ...returnData });
+    };
+
+    const authAndData = async (midX, codeX) => {
       try {
         /* const dummyData = {
           userData: {
@@ -72,12 +103,14 @@ const App = () => {
           {},
           {
             headers: {
-              mid: mid,
-              code: code,
+              mid: midX,
+              code: codeX,
             },
           }
         );
         setAuthToken(auth.data.token);
+        localStorage.setItem("AuthToken", `${auth.data.token}`);
+        localStorage.setItem("mid", `${mid}`);
 
         const res = await axios.get(`https://omnigateway.net/api/${mid}/info`, {
           headers: {
@@ -98,8 +131,22 @@ const App = () => {
         console.error(err);
       }
     };
-    fetchData();
-  }, []);
+
+    if (authToken) {
+      /* console.log("authToken"); */
+      if (!code) {
+        /* console.log("token for effect"); */
+        fetchData(authToken);
+      }
+    } else {
+      if (mid) {
+        if (code) {
+          /* console.log(`${mid} ${code}`); */
+          authAndData(mid, code);
+        }
+      }
+    }
+  }, [authToken]);
 
   const syncCategoriesAction = async () => {
     setButtonLoading(true);
