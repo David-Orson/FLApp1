@@ -28,6 +28,7 @@ const App = () => {
   });
   const [mid, setMid] = useState(null);
   const [code, setCode] = useState(null);
+  const [authToken, setAuthToken] = useState(null);
   const [buttonLoading, setButtonLoading] = useState(false);
 
   const location = useLocation();
@@ -76,6 +77,7 @@ const App = () => {
             },
           }
         );
+        setAuthToken(auth.data.token);
 
         const res = await axios.get(`https://omnigateway.net/api/${mid}/info`, {
           headers: {
@@ -101,7 +103,7 @@ const App = () => {
 
   const syncCategoriesAction = async () => {
     setButtonLoading(true);
-    const auth = await axios.post(
+    /* const auth = await axios.post(
       "https://omnigateway.net/auth",
       {},
       {
@@ -110,14 +112,16 @@ const App = () => {
           code: code,
         },
       }
-    );
+    ); */
+
+    /* used to use an extra request to gain the auth token, this implementation places the token in the App state. */
 
     const SyncData = await axios.post(
       `https://omnigateway.net/api/${mid}/sync/clover/categories`,
       {},
       {
         headers: {
-          Authorization: `Bearer ${auth.data.token}`,
+          Authorization: `Bearer ${authToken}`,
         },
       }
     );

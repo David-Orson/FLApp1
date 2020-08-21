@@ -12,11 +12,11 @@ const Navbar = (props) => {
     <div className="navbar">
       <h2 className="nav-title">APPS</h2>
 
-      <Link to={`/?mid=${props.mid}&code=${props.code}`}>
-        <NavLink to={`/`} className="major-link inactive">
-          Clover to Shopify Product Sync
-        </NavLink>
-      </Link>
+      {/* <Link to={`/?mid=${props.mid}&code=${props.code}`}> */}
+      <NavLink to={`/`} className={` ${"major-link" /* inactive */}`}>
+        Clover to Shopify Product Sync
+      </NavLink>
+      {/* </Link> */}
 
       {/* Strange fix to preserve the Navlink as Active for styling but have the Link redirect to mid and code params. The Navlink's Events have been muted in css */}
 
