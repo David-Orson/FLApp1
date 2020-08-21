@@ -83,7 +83,7 @@ const App = () => {
           },
         });
 
-        const returnData = { userData: { ...res.data }, authenticated: auth };
+        const returnData = { userData: { ...res.data } };
         setState({ ...returnData });
 
         /* console.log(returnData);

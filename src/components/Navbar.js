@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "@reach/router";
 
 import NavLink from "./NavLink";
 
@@ -11,12 +12,13 @@ const Navbar = (props) => {
     <div className="navbar">
       <h2 className="nav-title">APPS</h2>
 
-      <NavLink
-        to={`/?mid=${props.mid}&code=${props.code}`}
-        className="major-link"
-      >
-        Clover to Shopify Product Sync
-      </NavLink>
+      <Link to={`/?mid=${props.mid}&code=${props.code}`}>
+        <NavLink to={`/`} className="major-link inactive">
+          Clover to Shopify Product Sync
+        </NavLink>
+      </Link>
+
+      {/* Strange fix to preserve the Navlink as Active for styling but have the Link redirect to mid and code params. The Navlink's Events have been muted in css */}
 
       <div className="minor-container">
         <p className="minor-link">Mapping Rules</p>

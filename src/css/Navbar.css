@@ -24,6 +24,11 @@
   font-weight: 500;
 }
 
+.inactive {
+  pointer-events: none;
+  cursor: default;
+}
+
 .minor-container {
   padding: 0px 10px 10px 22px;
 }
