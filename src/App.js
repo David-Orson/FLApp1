@@ -209,7 +209,7 @@ const App = () => {
               <Products path="/products" />
               <Categories path="/categories" />
               <Login path="/login" />
-              <UserSetup path="/usersetup" authToken={authToken} />
+              <UserSetup path="/usersetup" authToken={authToken} mid={mid} />
             </Router>
           </div>
         </div>
