@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Router, useLocation, navigate } from "@reach/router";
+import { Router, useLocation, navigate, createHistory } from "@reach/router";
 import queryString from "query-string";
 import axios from "axios";
 
@@ -11,6 +11,7 @@ import Navbar from "./components/Navbar";
 import Sync from "./pages/Sync";
 import Products from "./pages/Products";
 import Categories from "./pages/Categories";
+import Login from "./pages/Login";
 
 const App = () => {
   const [state, setState] = useState({
@@ -57,7 +58,11 @@ const App = () => {
     /* console.log("not auth") */ if (token) {
       /* console.log(token) */ setAuthToken(token);
     }
-    if (location.href !== `${location.origin}/`) navigate(location.origin);
+    if (location.href !== `${location.origin}/`) {
+      if (location.href !== `${location.origin}/login`) {
+        navigate(location.origin);
+      }
+    }
   }
 
   /* console.log(`here is mid ${mid}`) */ if (!mid) {
@@ -144,6 +149,13 @@ const App = () => {
           /* console.log(`${mid} ${code}`); */
           authAndData(mid, code);
         }
+      } else {
+        console.log(location);
+        if (location.href !== `${location.origin}/login`) {
+          window.location.href = "/login";
+        }
+
+        /* navigate(`${location.href}/login`); */
       }
     }
   }, [authToken]);
@@ -195,6 +207,7 @@ const App = () => {
               />
               <Products path="/products" />
               <Categories path="/categories" />
+              <Login path="/login" />
             </Router>
           </div>
         </div>
