@@ -9,46 +9,41 @@ const UserSetup = (props) => {
   const [buttonLoading, setButtonLoading] = useState(false);
   console.log(props);
 
-  const firstSync = () => {
+  const firstSync = async () => {
     setButtonLoading(true);
     console.log(buttonLoading);
-    axios
-      .post(
-        `https://omnigateway.net/api/${props.mid}/import/clover/items`,
-        {},
-        {
-          headers: {
-            Authorization: `Bearer ${props.authToken}`,
-          },
-        }
-      )
-      .then((res) => {
-        axios.post(
-          `https://omnigateway.net/api/${props.mid}/import/clover/categories`,
-          {},
-          {
-            headers: {
-              Authorization: `Bearer ${props.authToken}`,
-            },
-          }
-        );
-      })
-      .then((res) => {
-        axios.post(
-          `https://omnigateway.net/api/${props.mid}/sync/clover`,
-          {},
-          {
-            headers: {
-              Authorization: `Bearer ${props.authToken}`,
-            },
-          }
-        );
-      })
-      .then((res) => {
-        if (res) {
-          setButtonLoading(false);
-        }
-      });
+
+    const items = await axios.post(
+      `https://omnigateway.net/api/${props.mid}/import/clover/items`,
+      {},
+      {
+        headers: {
+          Authorization: `Bearer ${props.authToken}`,
+        },
+      }
+    );
+
+    const categories = await axios.post(
+      `https://omnigateway.net/api/${props.mid}/import/clover/categories`,
+      {},
+      {
+        headers: {
+          Authorization: `Bearer ${props.authToken}`,
+        },
+      }
+    );
+
+    const sync = await axios.post(
+      `https://omnigateway.net/api/${props.mid}/sync/clover`,
+      {},
+      {
+        headers: {
+          Authorization: `Bearer ${props.authToken}`,
+        },
+      }
+    );
+
+    setButtonLoading(false);
   };
 
   return (
