@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Router, useLocation, navigate, createHistory } from "@reach/router";
+import { Router, useLocation, navigate } from "@reach/router";
 import queryString from "query-string";
 import axios from "axios";
 
@@ -12,6 +12,7 @@ import Sync from "./pages/Sync";
 import Products from "./pages/Products";
 import Categories from "./pages/Categories";
 import Login from "./pages/Login";
+import UserSetup from "./pages/UserSetup";
 
 const App = () => {
   const [state, setState] = useState({
@@ -208,6 +209,7 @@ const App = () => {
               <Products path="/products" />
               <Categories path="/categories" />
               <Login path="/login" />
+              <UserSetup path="/usersetup" authToken={authToken} />
             </Router>
           </div>
         </div>

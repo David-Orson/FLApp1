@@ -37,6 +37,17 @@ a:focus {
   cursor: pointer;
 }
 
+.button--large {
+  background: #42b029;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
 /* App Styles */
 
 .main-container {
